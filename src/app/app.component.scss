@@ -1,0 +1,9 @@
+@use "./../styles.scss" as basic;
+
+.card-preview {
+  background-image: url("/assets/images/bg-main-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--white);
+  padding: 5vw;
+}

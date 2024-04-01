@@ -1,0 +1,37 @@
+.card-front {
+  container: card / inline-size;
+  background-image: url("/assets/images/bg-card-front.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  max-width: min(85%, 22rem);
+  aspect-ratio: 447/245;
+  padding: clamp(0.75rem, 5%, 1.25rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+img.logo {
+  max-width: 20%;
+}
+
+.card-data {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.card-hold-data {
+  display: flex;
+  justify-content: space-between;
+}
+
+@container card (min-width: 0px) {
+  .card-number {
+    font-size: 7cqw;
+    margin-bottom: 1cqh;
+  }
+
+  .card-hold-data {
+    font-size: 4.5cqw;
+  }
+}
