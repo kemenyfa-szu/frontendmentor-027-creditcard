@@ -40,7 +40,7 @@ body {
 main {
   min-height: 100vh;
   display: flex;
-  background-image: url("/assets/images/bg-main-mobile.png");
+  background-image: url("./assets/images/bg-main-mobile.png");
   background-repeat: no-repeat;
   padding-block: min(2rem, 10vw);
   padding-inline: min(1rem, 5vw);
@@ -79,7 +79,7 @@ button {
 
 @media screen and (min-width: 800px) {
   main {
-    background-image: url("/assets/images/bg-main-desktop.png");
+    background-image: url("./assets/images/bg-main-desktop.png");
     background-size: var(--l-card-container-width) 100%;
   }
 }
