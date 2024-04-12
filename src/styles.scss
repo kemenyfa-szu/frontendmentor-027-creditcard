@@ -1,6 +1,5 @@
 :root {
   --active-input-border: linear-gradient(
-    0deg,
     hsl(249, 99%, 64%),
     hsl(278, 94%, 30%)
   );
@@ -9,6 +8,18 @@
   --light-grayish-violet: hsl(270, 3%, 87%);
   --dark-grayish-violet: hsl(279, 6%, 55%);
   --very-dark-violet: hsl(278, 68%, 11%);
+  --dark-violet: hsl(278, 68%, 20%);
+  --not-so-dark-violet: hsl(278, 68%, 29%);
+
+  --font-family: "Space Grotesk", "Gill Sans", "Gill Sans MT", Calibri,
+    "Trebuchet MS", sans-serif;
+
+  --s-card-container-height: clamp(
+    min(calc(6rem + 37vw), 14rem),
+    50vw,
+    15.5rem
+  );
+  --l-card-container-width: max(20rem, 33%);
 }
 
 * {
@@ -18,11 +29,57 @@
 }
 
 html {
-  font-family: "Space Grotesk", "Gill Sans", "Gill Sans MT", Calibri,
-    "Trebuchet MS", sans-serif;
+  font-family: var(--font-family);
   font-size: 18px;
 }
 
+body {
+  color: var(--very-dark-violet);
+}
+
 main {
-  min-height: 100vw;
+  min-height: 100vh;
+  display: flex;
+  background-image: url("/assets/images/bg-main-mobile.png");
+  background-repeat: no-repeat;
+  padding-block: min(2rem, 10vw);
+  padding-inline: min(1rem, 5vw);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+button {
+  font-size: 1rem;
+  color: var(--white);
+  background-color: var(--very-dark-violet);
+  border: none;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0.875em;
+}
+
+@media screen and (max-width: 799px) {
+  main {
+    justify-content: center;
+    background-size: 100% var(--s-card-container-height);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  main {
+    background-image: url("/assets/images/bg-main-desktop.png");
+    background-size: var(--l-card-container-width) 100%;
+  }
 }

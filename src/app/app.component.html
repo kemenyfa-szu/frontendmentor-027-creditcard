@@ -1,9 +1,17 @@
 <main>
-  <section class="card-preview">
-    <app-card-front></app-card-front>
-    <app-card-back> </app-card-back>
-  </section>
-  <section class="card-form">
-    <app-card-form> </app-card-form>
+  <section class="container">
+    <article class="card-container">
+      <app-card-back [cardData]="cardData"> </app-card-back>
+      <app-card-front [cardData]="cardData"></app-card-front>
+    </article>
+
+    <app-card-form
+      *ngIf="!success; else succesful"
+      [(cardData)]="this.cardData"
+      (success)="successfulSubmit($event)"
+    ></app-card-form>
+    <ng-template #succesful>
+      <app-thank-you (click)="resetForm()"></app-thank-you>
+    </ng-template>
   </section>
 </main>

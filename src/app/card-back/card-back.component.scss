@@ -1,0 +1,42 @@
+@use "./../../styles.scss" as basic;
+
+.card-back {
+  position: absolute;
+  right: 0;
+
+  color: var(--white);
+
+  container: card / inline-size;
+  background-image: url("/assets/images/bg-card-back.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  aspect-ratio: 446/245;
+  border-radius: 10px;
+  box-shadow: 0 25px 25px hsla(0, 0%, 0%, 0.2);
+}
+
+@media screen and (max-width: 799px) {
+  .card-back {
+    // min-width: 160px;
+    width: 82%;
+    padding: clamp(0.75rem, 6%, 2rem);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .card-back {
+    top: 55%;
+    min-width: 300px;
+    width: 90%;
+    max-width: 480px;
+    padding: clamp(1rem, 7.5%, 2rem);
+  }
+}
+
+@container card (min-width: 0px) {
+  .cvc {
+    font-size: 4cqw;
+    margin-top: 20%;
+    margin-left: 85%;
+  }
+}

@@ -1,9 +1,41 @@
-@use "./../styles.scss" as basic;
+.container {
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+}
 
-.card-preview {
-  background-image: url("/assets/images/bg-main-mobile.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: var(--white);
-  padding: 5vw;
+.card-container {
+  position: relative;
+  // min-height: 15rem;
+}
+
+@media screen and (max-width: 799px) {
+  .container {
+    width: 100%;
+    max-width: 25rem;
+  }
+
+  .card-container {
+    min-height: var(--s-card-container-height);
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .container {
+    display: flex;
+    flex: 1;
+
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 10%;
+    gap: 5rem;
+  }
+
+  .card-container {
+    width: min(calc(var(--l-card-container-width) + 7rem), 33vw);
+    height: 66%;
+    max-height: 35rem;
+  }
 }
